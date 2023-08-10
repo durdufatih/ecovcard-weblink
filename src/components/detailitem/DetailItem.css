@@ -1,0 +1,24 @@
+.item{
+    flex-direction: row;
+    padding: 2px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 3px;
+    background-color: lightgrey;
+    
+  }
+  .detail{
+    width: 80%;
+    height: 90%;
+    justify-content: center;
+    
+  }
+
+  .icon {
+    padding: 10px;
+  }
+
+  .value{
+    padding: 10px;
+  }
