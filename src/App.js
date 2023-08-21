@@ -1,23 +1,15 @@
 import './App.css';
-import BusinessCard from './components/businesscard/BusinessCard';
-import backgroundImage from './images/backgroung.jpg';
-import logo from './images/logo.svg';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <div className="card">
-    <div className="card-content">
-    <BusinessCard
-        backgroundImage={backgroundImage}
-        logo={logo}
-        name="John Doe"
-        title="Founder & CEO"
-      />
-    </div>
-  </div>
-    
-    </div>
+    <Router>
+      <Routes>
+        <Route path=":id" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 

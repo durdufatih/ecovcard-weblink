@@ -39,7 +39,7 @@
     background-color: blue; /* Name bilgisi arka plan rengi */
     margin-top: -45px;
     z-index: 0;
-    width: calc(100%); /* Genişlik ekranı kaplasın */
+    width: 100%; /* Genişlik ekranı kaplasın */
   }
   a {
     text-decoration: none; 
@@ -50,14 +50,14 @@
     margin: 0;
     font-size: 1.5rem;
     color: white;
-    margin-left: 100px;
+    margin-left: 50px;
   }
   
   .info p.title {
     margin: 0;
     font-size: 1rem;
     color: white;
-    margin-left: 100px;
+    margin-left: 50px;
   }
 
   .detail-container{

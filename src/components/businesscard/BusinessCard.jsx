@@ -35,25 +35,20 @@ END:VCARD
   link.click();
 }
 const BusinessCard = ({
-  backgroundImage,
-  logo,
-  name,
-  title,
-  telephone,
-  phone,
+  card
 }) => {
   return (
     <div className="business-card">
       <div
         className="background-image"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${card.selectedImageUrl})` }}
       ></div>
       <div className="logo">
-        <img src={logo} alt="Logo" className="half-logo" />
+        <img src={card.selectedLogoUrl} alt="Logo" className="half-logo" />
       </div>
       <div className="info">
-        <h2 className="name">{name}</h2>
-        <p className="title">{title}</p>
+        <div style={{backgroundColor: card.backgroundTitle,width:'100%'}}><h2 className="name">{card.title}</h2></div>
+        <div style={{backgroundColor: card.backgroundLogo,width:'100%'}}><p className="title">{card.description}</p></div>
       </div>
 
       <section className="detail-container">
@@ -62,8 +57,8 @@ const BusinessCard = ({
             <div className="icon">
               <FaMobile />
             </div>
-            <a className="value" href="tel:+905423875430">
-              +905423875430
+            <a className="value" href= {"tel:"+card.gsmNumber}>
+              {card.gsmNumber}
             </a>
           </div>
 
@@ -71,9 +66,8 @@ const BusinessCard = ({
             <div className="icon">
               <FaPhoneAlt />
             </div>
-            <a className="value" href="tel:+902127653456">
-              {" "}
-              02127653456
+            <a className="value" href={"tel:"+card.phoneNumber}>
+              {card.phoneNumber}
             </a>
           </div>
 
@@ -81,9 +75,8 @@ const BusinessCard = ({
             <div className="icon">
               <FaEnvelope />
             </div>
-            <a className="value" href="mailto:mfdurdu@gmail.com">
-              {" "}
-              mfdurdu@gmail.com
+            <a className="value" href={"mailto:"+card.emailAddress}>
+              {card.emailAddress}
             </a>
           </div>
 
@@ -91,9 +84,8 @@ const BusinessCard = ({
             <div className="icon">
               <FaHome />
             </div>
-            <a className="value" href="https://www.google.com.tr">
-              {" "}
-              fatihdurdu.com
+            <a className="value" href={card.websiteURL}>
+              {card.websiteURL}
             </a>
           </div>
 
