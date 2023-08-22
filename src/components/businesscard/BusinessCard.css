@@ -9,6 +9,7 @@
     height: 200px;
     background-size: cover;
     background-position: right bottom;
+    border-radius: 10px;
   }
   
   .background-image img {
@@ -40,6 +41,7 @@
     margin-top: -45px;
     z-index: 0;
     width: 100%; /* Genişlik ekranı kaplasın */
+    border-radius: 5px;
   }
   a {
     text-decoration: none; 
@@ -51,6 +53,7 @@
     font-size: 1.5rem;
     color: white;
     margin-left: 50px;
+    border-radius: 5px;
   }
   
   .info p.title {
@@ -58,6 +61,7 @@
     font-size: 1rem;
     color: white;
     margin-left: 50px;
+    border-radius: 5px;
   }
 
   .detail-container{
