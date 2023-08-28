@@ -14,7 +14,7 @@ body, html {
 
 .card {
   width: 400px;
-  height: 700px;
+  height: 720px;
   background-color: #ffffff;
   border-radius: 20px; /* Köşeleri yuvarlatma */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Gölge efekti */

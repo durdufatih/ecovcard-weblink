@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 function HomePage() {
   let { id } = useParams();
   const [data, setData] = useState([]);
+  const [showDetail, setShowDetail] = useState(true);
 
   useEffect(() => {
     console.log("Hello");
@@ -20,14 +21,15 @@ function HomePage() {
           setData(cardData);
           console.log(cardData.selectedImageUrl);
           console.log("Card data:", cardData);
+          saveUserAction();
         } else {
+          setShowDetail(false);
           console.log("Card not found");
         }
       })
       .catch((error) => {
         console.error("Error fetching card:", error);
       });
-    saveUserAction();
   }, [id]);
 
   async function saveUserAction() {
@@ -39,11 +41,15 @@ function HomePage() {
   }
   return (
     <div className="App">
-      <div className="card">
-        <div className="card-content">
-          <BusinessCard card={data} />
+      {showDetail ? (
+        <div className="card">
+          <div className="card-content">
+            <BusinessCard card={data} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>Kayıt bulunamadı</div>
+      )}
     </div>
   );
 }

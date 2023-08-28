@@ -34,9 +34,7 @@ END:VCARD
   link.href = url;
   link.click();
 }
-const BusinessCard = ({
-  card
-}) => {
+const BusinessCard = ({ card }) => {
   return (
     <div className="business-card">
       <div
@@ -46,18 +44,24 @@ const BusinessCard = ({
       <div className="logo">
         <img src={card.selectedLogoUrl} alt="Logo" className="half-logo" />
       </div>
-      <div className="info">
-        <div style={{backgroundColor: card.backgroundTitle,width:'100%'}}><h2 className="name">{card.title}</h2></div>
-        <div style={{backgroundColor: card.backgroundLogo,width:'100%'}}><p className="title">{card.description}</p></div>
+      <div className="info" style={{ backgroundColor: card.backgroundTitle }}>
+        <div style={{ width: "100%" }}>
+          <h2 className="name">{card.title}</h2>
+        </div>
+        <div style={{ width: "100%" }}>
+          <p className="title">{card.description}</p>
+        </div>
       </div>
-
+      <button className="saveButton" onClick={save}>
+        Kaydet
+      </button>
       <section className="detail-container">
         <div className="detail">
           <div className="item">
             <div className="icon">
               <FaMobile />
             </div>
-            <a className="value" href= {"tel:"+card.gsmNumber}>
+            <a className="value" href={"tel:" + card.gsmNumber}>
               {card.gsmNumber}
             </a>
           </div>
@@ -66,7 +70,7 @@ const BusinessCard = ({
             <div className="icon">
               <FaPhoneAlt />
             </div>
-            <a className="value" href={"tel:"+card.phoneNumber}>
+            <a className="value" href={"tel:" + card.phoneNumber}>
               {card.phoneNumber}
             </a>
           </div>
@@ -75,7 +79,7 @@ const BusinessCard = ({
             <div className="icon">
               <FaEnvelope />
             </div>
-            <a className="value" href={"mailto:"+card.emailAddress}>
+            <a className="value" href={"mailto:" + card.emailAddress}>
               {card.emailAddress}
             </a>
           </div>
@@ -128,10 +132,6 @@ const BusinessCard = ({
               Instagram
             </a>
           </div>
-
-          <button className="saveButton" onClick={save}>
-            Kaydet
-          </button>
         </div>
       </section>
     </div>
