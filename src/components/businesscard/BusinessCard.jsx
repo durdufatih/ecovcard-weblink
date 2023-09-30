@@ -11,7 +11,7 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa";
 
-const makeVCardVersion = () => `VERSION:4.0`;
+const makeVCardVersion = () => `VERSION:3.0`;
 const makeVCardInfo = (info) => `N:${info}`;
 const makeVCardName = (name) => `FN:${name}`;
 const makeVCardOrg = (org) => `ORG:${org}`;
