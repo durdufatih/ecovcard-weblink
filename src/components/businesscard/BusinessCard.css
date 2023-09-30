@@ -109,6 +109,22 @@
     font-size: 15px;
 
   }
+  .butView{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .whatsupButton{
+    color: white;
+    background-color: green;
+    margin-top: 4px;
+    width: 150px;
+    border-radius: 5px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 15px;
+  }
 
   
   

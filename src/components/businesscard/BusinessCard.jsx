@@ -80,9 +80,21 @@ const BusinessCard = ({ card }) => {
           <p className="title">{card.description}</p>
         </div>
       </div>
-      <button className="saveButton" onClick={()=>save(card)}>
-        Kaydet
-      </button>
+      <div className="butView">
+        <button className="saveButton" onClick={() => save(card)}>
+          Kaydet
+        </button>
+        <button
+          className="whatsupButton"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = "https://wa.me/"+ card.gsmNumber.replace("+","");
+            
+          }}
+        >
+          Whatsapp
+        </button>
+      </div>
       <section className="detail-container">
         <div className="detail">
           <div className="item">
