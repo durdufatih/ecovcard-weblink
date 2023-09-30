@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../App.css";
 import BusinessCard from "../components/businesscard/BusinessCard";
@@ -10,6 +10,7 @@ function HomePage() {
   let { id } = useParams();
   const [data, setData] = useState([]);
   const [showDetail, setShowDetail] = useState(true);
+  const idRef = useRef(id);
 
   useEffect(() => {
     console.log("Hello");
@@ -19,9 +20,7 @@ function HomePage() {
         if (docSnapshot.exists()) {
           const cardData = docSnapshot.data();
           setData(cardData);
-          console.log(cardData.selectedImageUrl);
-          console.log("Card data:", cardData);
-          saveUserAction();
+          console.log('i fire once');
         } else {
           setShowDetail(false);
           console.log("Card not found");
@@ -30,7 +29,8 @@ function HomePage() {
       .catch((error) => {
         console.error("Error fetching card:", error);
       });
-  }, [id]);
+      // eslint-disable-next-line
+  }, []);
 
   async function saveUserAction() {
     await setDoc(doc(db, "views", uuidv4()), {
@@ -41,7 +41,7 @@ function HomePage() {
   }
   return (
     <div className="App">
-      {showDetail ? (
+      {showDetail ? (saveUserAction() &&
         <div className="card">
           <div className="card-content">
             <BusinessCard card={data} />
