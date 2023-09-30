@@ -30,7 +30,7 @@ ${makeVCardVersion()}
 ${makeVCardInfo(cardItem.description)}
 ${makeVCardName(cardItem.title)}
 ${makeVCardOrg(cardItem.ownerId)}
-${makeVCardTitle(cardItem.description)}
+${makeVCardTitle(cardItem.title)}
 ${makeVCardPhoto(cardItem.selectedLogoUrl)}
 ${makeVCardLogo(cardItem.selectedLogoUrl)}
 ${makeVCardTel(cardItem.phoneNumber)}
